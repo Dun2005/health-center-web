@@ -1,6 +1,6 @@
 import express from "express";
 import db from "../models/index";
-import { createNewUser } from "../service/CRUDService";
+import CRUDService from "../service/CRUDService";
 
 let getHomePage = (req, res) => {
     return res.send("send from homeController");
@@ -20,10 +20,16 @@ let getCRUD = (req, res) => {
     return res.render("crud.ejs");
 };
 
-let postCRUD = (req, res) => {
-    let message = createNewUser(req.body);
+let postCRUD = async (req, res) => {
+    let message = await CRUDService.createNewUser(req.body);
     console.log(message);
     return res.send("post from post crud");
+};
+
+let displayGetCRUD = async (req, res) => {
+    let data = await CRUDService.getAllUser();
+    console.log(data);
+    return res.render("displayTable", { dataTable: data });
 };
 
 module.exports = {
@@ -31,4 +37,5 @@ module.exports = {
     getAboutPage: getAboutPage,
     getCRUD: getCRUD,
     postCRUD: postCRUD,
+    displayGetCRUD: displayGetCRUD,
 };
