@@ -65,7 +65,12 @@
                         type="button"
                         >Edit</a
                     >
-                    <a class="btn-del" type="button">Delete</a>
+                    <a
+                        href="/delete-crud?id=<%= dataTable[i].id %>"
+                        class="btn-del"
+                        type="button"
+                        >Delete</a
+                    >
                 </td>
             </tr>
             <% } %>
