@@ -1,4 +1,3 @@
-import express from "express";
 import db from "../models/index";
 import CRUDService from "../service/CRUDService";
 
