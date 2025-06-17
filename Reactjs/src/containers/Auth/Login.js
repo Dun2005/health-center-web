@@ -6,6 +6,7 @@ import * as actions from "../../store/actions";
 
 import "./Login.scss";
 import { FormattedMessage } from "react-intl";
+import { handleLoginApi } from "../../services/userService";
 
 class Login extends Component {
     constructor(props) {
@@ -13,6 +14,7 @@ class Login extends Component {
         this.state = {
             username: "",
             password: "",
+            message: "",
         };
     }
 
@@ -23,8 +25,27 @@ class Login extends Component {
         });
     };
 
-    handleLogin = () => {
-        alert("login");
+    handleLogin = async () => {
+        this.setState({ message: "" });
+        try {
+            let data = await handleLoginApi(
+                this.state.username,
+                this.state.password
+            );
+
+            if (data && data.errCode !== 0) {
+                this.setState({ message: data.message });
+            }
+            if (data && data.errCode === 0) {
+                console.log("login success");
+            }
+        } catch (e) {
+            if (e.response) {
+                if (e.response.data) {
+                    this.setState({ message: e.response.data.message });
+                }
+            }
+        }
     };
 
     render() {
@@ -54,6 +75,9 @@ class Login extends Component {
                                 value={this.state.password}
                                 onChange={(event) => this.handleInput(event)}
                             ></input>
+                        </div>
+                        <div className="col-12" style={{ color: "red" }}>
+                            {this.state.message}
                         </div>
                         <div className="col-12">
                             <button
