@@ -10,7 +10,22 @@ import { FormattedMessage } from "react-intl";
 class Login extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            username: "",
+            password: "",
+        };
     }
+
+    handleInput = (event) => {
+        const { name, value } = event.target;
+        this.setState({
+            [name]: value,
+        });
+    };
+
+    handleLogin = () => {
+        alert("login");
+    };
 
     render() {
         return (
@@ -21,21 +36,32 @@ class Login extends Component {
                         <div className="col-12 form-group login-input">
                             <label>Username</label>
                             <input
+                                name="username"
                                 type="text"
                                 className="form-control"
                                 placeholder="Username"
+                                value={this.state.username}
+                                onChange={(event) => this.handleInput(event)}
                             ></input>
                         </div>
                         <div className="col-12 form-group login-input">
                             <label>Password</label>
                             <input
+                                name="password"
                                 type="password"
                                 className="form-control"
                                 placeholder="Password"
+                                value={this.state.password}
+                                onChange={(event) => this.handleInput(event)}
                             ></input>
                         </div>
                         <div className="col-12">
-                            <button className="login-btn">Login</button>
+                            <button
+                                onClick={() => this.handleLogin()}
+                                className="login-btn"
+                            >
+                                Login
+                            </button>
                         </div>
                         <div className="col-12">
                             <span className="forgot-password">
