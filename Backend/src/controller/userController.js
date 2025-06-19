@@ -20,6 +20,25 @@ let loginHandler = async (req, res) => {
     });
 };
 
+let handleGetUser = async (req, res) => {
+    let id = req.body.id;
+    let user = await userService.getUser(id);
+    if (!id) {
+        return res.status(200).json({
+            errCode: 1,
+            message: "missing parameter",
+            user: {},
+        });
+    }
+
+    return res.status(200).json({
+        errCode: 1,
+        message: "get user successful",
+        user,
+    });
+};
+
 module.exports = {
     loginHandler: loginHandler,
+    handleGetUser: handleGetUser,
 };
