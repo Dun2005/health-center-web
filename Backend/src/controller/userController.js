@@ -21,7 +21,7 @@ let loginHandler = async (req, res) => {
 };
 
 let handleGetUser = async (req, res) => {
-    let id = req.body.id;
+    let id = req.query.id;
     let user = await userService.getUser(id);
     if (!id) {
         return res.status(200).json({
@@ -32,7 +32,7 @@ let handleGetUser = async (req, res) => {
     }
 
     return res.status(200).json({
-        errCode: 1,
+        errCode: 0,
         message: "get user successful",
         user,
     });

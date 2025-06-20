@@ -59,9 +59,10 @@ let getUser = (id) => {
             if (id === "ALL") {
                 let user = await db.User.findAll({
                     attributes: {
-                        exclude: [password],
+                        exclude: ["password"],
                     },
                 });
+                resolve(user);
             }
             if (id && id !== "ALL") {
                 let user = await db.User.findOne({
@@ -70,9 +71,8 @@ let getUser = (id) => {
                         exclude: [password],
                     },
                 });
+                resolve(user);
             }
-
-            resolve(user);
         } catch (e) {
             reject(e);
         }
