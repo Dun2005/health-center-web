@@ -3,11 +3,13 @@ import { FormattedMessage } from "react-intl";
 import "./UserManage.scss";
 import { connect } from "react-redux";
 import { getUser } from "../../services/userService";
+import ModalUser from "./ModalUser";
 class UserManage extends Component {
     constructor(props) {
         super(props);
         this.state = {
             arrUsers: [],
+            isOpenModel: false,
         };
     }
 
@@ -20,11 +22,33 @@ class UserManage extends Component {
         }
     }
 
+    handleAddUser = () => {
+        this.setState({ isOpenModel: true });
+    };
+
+    toggleUserModel = () => {
+        this.setState({
+            isOpenModel: !this.state.isOpenModel,
+        });
+    };
+
     render() {
         let arrUsers = this.state.arrUsers;
         return (
             <div className="user-container">
+                <ModalUser
+                    isOpen={this.state.isOpenModel}
+                    toggleFromParent={this.toggleUserModel}
+                />
                 <div className="title">Manage users</div>
+                <div className="mx-1">
+                    <button
+                        className="btn btn-primary px-3"
+                        onClick={() => this.handleAddUser()}
+                    >
+                        Add
+                    </button>
+                </div>
                 <div className="user-table mt-3 mx-1">
                     <table id="customers">
                         <tr>
@@ -44,10 +68,10 @@ class UserManage extends Component {
                                         <td>{item.address}</td>
                                         <td>
                                             <button className="btn-edit">
-                                                <i class="fas fa-pencil-alt"></i>
+                                                <i className="fas fa-pencil-alt"></i>
                                             </button>
                                             <button className="btn-delete">
-                                                <i class="fas fa-trash"></i>
+                                                <i className="fas fa-trash"></i>
                                             </button>
                                         </td>
                                     </tr>
