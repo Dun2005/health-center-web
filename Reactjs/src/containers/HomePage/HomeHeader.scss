@@ -1,0 +1,142 @@
+.home-header-container {
+    height: 60px;
+    width: 100%;
+    padding: 0 20px;
+    .home-header-content {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        .left-container {
+            width: 25%;
+            border: 1px solid red;
+            align-items: center;
+            display: flex;
+            .header-logo {
+                background: url("../../assets/images/medical_logo.svg") center
+                    center no-repeat;
+                height: 100%;
+                width: 25%;
+                cursor: pointer;
+            }
+            i {
+                font-size: 25px;
+                color: grey;
+                cursor: pointer;
+            }
+        }
+        .middle-container {
+            width: 50%;
+            border: 1px solid green;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .child-content {
+                .sub-text {
+                    font-weight: 400;
+                    font-size: 12px;
+                }
+            }
+        }
+        .right-container {
+            width: 25%;
+            border: 1px solid blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+.banner-header-container {
+    background: url("../../assets/images/bookingcare-cover-4.1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 485px; /* or px */
+    padding: 15px 0;
+
+    .top-header {
+        padding-top: 15px;
+        height: 50%;
+        .title1 {
+            text-align: center;
+            font-size: 30px;
+            text-shadow: 1px 1px 1px #333;
+            color: white;
+            margin-top: 30px;
+            margin-bottom: 5px;
+        }
+
+        .title2 {
+            text-align: center;
+            font-size: 30px;
+            text-shadow: 1px 1px 1px #333;
+            color: white;
+        }
+
+        .search {
+            width: fit-content;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-radius: 25px;
+            background-color: #ffd66b;
+            margin-top: 10px;
+
+            i {
+                margin: 0 5px;
+            }
+
+            input {
+                height: 30px;
+                width: 360px;
+                background: transparent;
+                outline: none;
+                border: none;
+            }
+        }
+    }
+
+    .bottom-header {
+        height: 50%;
+
+        .options {
+            display: flex;
+            text-align: center;
+            gap: 50px;
+            justify-content: center;
+            .option-child {
+                width: 100px;
+                border: 1px solid red;
+                text-align: center;
+
+                .icon-child {
+                    padding: 10px;
+                    height: 40px;
+                    width: 40px;
+                    border-radius: 50%;
+                    text-align: center;
+                    margin: 0 auto;
+                    background: white;
+
+                    i {
+                        font-size: 20px;
+                        color: #4da8da;
+                    }
+                }
+
+                .text-child {
+                    font-size: 16px;
+                    font-weight: 600;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: #4da8da;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -133,19 +133,19 @@ let deleteUser = (id) => {
             if (!user) {
                 resolve({
                     errCode: 2,
-                    message: "User not exist",
+                    errMessage: "User not exist",
+                });
+            } else {
+                await db.User.destroy({
+                    where: {
+                        id: id,
+                    },
+                });
+                resolve({
+                    errCode: 0,
+                    errMessage: "User deleted",
                 });
             }
-
-            await db.User.destroy({
-                where: {
-                    id: id,
-                },
-            });
-            resolve({
-                errCode: 0,
-                message: "User deleted",
-            });
         } catch (e) {
             reject(e);
         }
