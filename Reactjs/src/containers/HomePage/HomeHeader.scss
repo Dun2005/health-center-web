@@ -1,5 +1,5 @@
 .home-header-container {
-    height: 60px;
+    height: 70px;
     width: 100%;
     padding: 0 20px;
     .home-header-content {
@@ -42,8 +42,37 @@
             width: 25%;
             border: 1px solid blue;
             display: flex;
-            justify-content: center;
+            justify-content: flex-end;
             align-items: center;
+            color: gray;
+
+            .support {
+                padding-right: 50px;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+
+                i {
+                    font-size: 15px;
+                    margin-right: 5px;
+                }
+            }
+
+            .language-vi {
+                cursor: pointer;
+                &.active {
+                    color: #4da8da;
+                }
+            }
+
+            .language-en {
+                margin: 0 15px;
+                cursor: pointer;
+
+                &.active {
+                    color: #4da8da;
+                }
+            }
         }
     }
 }
@@ -52,13 +81,14 @@
     background: url("../../assets/images/bookingcare-cover-4.1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position-x: center;
+    background-position-y: -200px;
     height: 485px; /* or px */
-    padding: 15px 0;
+    // padding: 15px 0;
 
     .top-header {
         padding-top: 15px;
-        height: 50%;
+        height: 65%;
         .title1 {
             text-align: center;
             font-size: 30px;
@@ -100,7 +130,16 @@
     }
 
     .bottom-header {
-        height: 50%;
+        height: 35%;
+
+        background-image: linear-gradient(
+            rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 0.9),
+            rgba(255, 255, 255, 1)
+        );
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
 
         .options {
             display: flex;
@@ -109,7 +148,6 @@
             justify-content: center;
             .option-child {
                 width: 100px;
-                border: 1px solid red;
                 text-align: center;
 
                 .icon-child {
