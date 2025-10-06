@@ -8,7 +8,7 @@
         display: flex;
         .left-container {
             width: 25%;
-            border: 1px solid red;
+
             align-items: center;
             display: flex;
             .header-logo {
@@ -26,7 +26,7 @@
         }
         .middle-container {
             width: 50%;
-            border: 1px solid green;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -40,11 +40,12 @@
         }
         .right-container {
             width: 25%;
-            border: 1px solid blue;
+
             display: flex;
             justify-content: flex-end;
             align-items: center;
             color: gray;
+            font-weight: 600;
 
             .support {
                 padding-right: 50px;
@@ -60,17 +61,33 @@
 
             .language-vi {
                 cursor: pointer;
+                opacity: 0.2;
                 &.active {
-                    color: #4da8da;
+                    opacity: 1;
+                    span {
+                        color: #4da8da;
+                    }
+                }
+
+                &:hover {
+                    opacity: 0.8;
                 }
             }
 
             .language-en {
                 margin: 0 15px;
                 cursor: pointer;
+                opacity: 0.2;
 
                 &.active {
-                    color: #4da8da;
+                    opacity: 1;
+                    span {
+                        color: #4da8da;
+                    }
+                }
+
+                &:hover {
+                    opacity: 0.8;
                 }
             }
         }

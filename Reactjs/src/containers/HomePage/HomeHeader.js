@@ -3,9 +3,15 @@ import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { FormattedMessage } from "react-intl";
 import "./HomeHeader.scss";
+import { LANGUAGES } from "../../utils/constant";
+import { changeLanguageApp } from "../../store/actions/appActions";
 
 class HomeHeader extends Component {
+    handleChangeLanguage = (language) => {
+        this.props.changeLanguageAppRedux(language);
+    };
     render() {
+        let language = this.props.language;
         return (
             <React.Fragment>
                 <div className="home-header-container">
@@ -61,8 +67,36 @@ class HomeHeader extends Component {
                                 <i class="fas fa-question-circle"></i>{" "}
                                 <FormattedMessage id="homeheader.support" />
                             </div>
-                            <div className="language-vi">Vi</div>
-                            <div className="language-en">En</div>
+                            <div
+                                className={
+                                    language === LANGUAGES.VI
+                                        ? "language-vi active"
+                                        : "language-vi"
+                                }
+                            >
+                                <span
+                                    onClick={() =>
+                                        this.handleChangeLanguage(LANGUAGES.VI)
+                                    }
+                                >
+                                    VI
+                                </span>
+                            </div>
+                            <div
+                                className={
+                                    language === LANGUAGES.EN
+                                        ? "language-en active"
+                                        : "language-en"
+                                }
+                            >
+                                <span
+                                    onClick={() =>
+                                        this.handleChangeLanguage(LANGUAGES.EN)
+                                    }
+                                >
+                                    EN
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -148,7 +182,10 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-    return {};
+    return {
+        changeLanguageAppRedux: (language) =>
+            dispatch(changeLanguageApp(language)),
+    };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeHeader);
