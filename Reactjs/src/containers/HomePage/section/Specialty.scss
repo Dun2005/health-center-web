@@ -1,0 +1,39 @@
+.section-specialty {
+    height: 330px;
+    background-color: #f5f5f5;
+    border: 1px solid red;
+
+    .section-content {
+        height: 100%;
+        margin: 0 50px;
+        .slick-slider {
+            display: flex;
+            height: 100%;
+
+            .slick-prev {
+                height: 50px;
+                width: 50px;
+                margin: auto;
+            }
+
+            .slick-next {
+                height: 50px;
+                width: 50px;
+                margin: auto;
+            }
+
+            .slick-track {
+                height: 100%;
+                div {
+                    height: 100%;
+                }
+                .img-customize {
+                    h3 {
+                        height: 100%;
+                        border: 1px solid green;
+                    }
+                }
+            }
+        }
+    }
+}
