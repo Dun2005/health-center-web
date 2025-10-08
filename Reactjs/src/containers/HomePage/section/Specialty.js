@@ -6,6 +6,25 @@ import "./Specialty.scss";
 import "slick-carousel/slick/slick.css";
 import Slider from "react-slick";
 
+import specialtyImg from "../../../assets/specialty/co-xuong-khop.png";
+
+function CustomPrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+        <button className={className} style={{ ...style }} onClick={onClick}>
+            <i className="fas fa-less-than"></i>
+        </button>
+    );
+}
+function CustomNextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+        <button className={className} style={{ ...style }} onClick={onClick}>
+            <i className="fas fa-greater-than"></i>
+        </button>
+    );
+}
+
 class Specialty extends Component {
     render() {
         let settings = {
@@ -14,30 +33,44 @@ class Specialty extends Component {
             speed: 500,
             slidesToShow: 4,
             slidesToScroll: 1,
+            nextArrow: <CustomNextArrow />,
+            prevArrow: <CustomPrevArrow />,
         };
         return (
             <div className="section-specialty">
-                <div className="section-content">
-                    <Slider {...settings}>
-                        <div className="img-customize">
-                            <h3>1</h3>
-                        </div>
-                        <div className="img-customize">
-                            <h3>2</h3>
-                        </div>
-                        <div className="img-customize">
-                            <h3>3</h3>
-                        </div>
-                        <div className="img-customize">
-                            <h3>4</h3>
-                        </div>
-                        <div className="img-customize">
-                            <h3>5</h3>
-                        </div>
-                        <div className="img-customize">
-                            <h3>6</h3>
-                        </div>
-                    </Slider>
+                <div className="section-container">
+                    <div className="section-header">
+                        <span>Chuyên khoa phổ biến</span>
+                        <button>Xem thêm</button>
+                    </div>
+                    <div className="section-body">
+                        <Slider {...settings}>
+                            <div className="img-customize">
+                                <img src={specialtyImg} className="img" />
+                                <div>Cơ xương khớp</div>
+                            </div>
+                            <div className="img-customize">
+                                <img src={specialtyImg} className="img" />
+                                <div>Cơ xương khớp</div>
+                            </div>
+                            <div className="img-customize">
+                                <img src={specialtyImg} className="img" />
+                                <div>Cơ xương khớp</div>
+                            </div>
+                            <div className="img-customize">
+                                <img src={specialtyImg} className="img" />
+                                <div>Cơ xương khớp</div>
+                            </div>
+                            <div className="img-customize">
+                                <img src={specialtyImg} className="img" />
+                                <div>Cơ xương khớp</div>
+                            </div>
+                            <div className="img-customize">
+                                <img src={specialtyImg} className="img" />
+                                <div>Cơ xương khớp</div>
+                            </div>
+                        </Slider>
+                    </div>
                 </div>
             </div>
         );
