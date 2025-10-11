@@ -2,16 +2,15 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { FormattedMessage } from "react-intl";
-import "./Specialty.scss";
 import "slick-carousel/slick/slick.css";
 import Slider from "react-slick";
 
 import img from "../../../assets/specialty/co-xuong-khop.png";
 
-class Specialty extends Component {
+class HandBook extends Component {
     render() {
         return (
-            <div className="section-share section-specialty">
+            <div className="section-share section-hand-book">
                 <div className="section-container">
                     <div className="section-header">
                         <span>Chuyên khoa phổ biến</span>
@@ -80,4 +79,4 @@ const mapDispatchToProps = (dispatch) => {
     return {};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Specialty);
+export default connect(mapStateToProps, mapDispatchToProps)(HandBook);

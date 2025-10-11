@@ -2,19 +2,19 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { FormattedMessage } from "react-intl";
-import "./Specialty.scss";
+import "./MedicalFacility.scss";
 import "slick-carousel/slick/slick.css";
 import Slider from "react-slick";
 
-import img from "../../../assets/specialty/co-xuong-khop.png";
+import img from "../../../assets/medical-facility/bvcr-moi.jpg";
 
-class Specialty extends Component {
+class MedicalFacility extends Component {
     render() {
         return (
-            <div className="section-share section-specialty">
+            <div className="section-share  section-medical-facility">
                 <div className="section-container">
                     <div className="section-header">
-                        <span>Chuyên khoa phổ biến</span>
+                        <span>Cơ sở y tế</span>
                         <button>Xem thêm</button>
                     </div>
                     <div className="section-body">
@@ -22,44 +22,44 @@ class Specialty extends Component {
                             <div className="img-customize">
                                 <img
                                     src={img}
-                                    className="img section-specialty"
+                                    className="img section-medical-facility"
                                 />
-                                <div>Cơ xương khớp</div>
+                                <div>Bệnh viện chợ rẫy</div>
                             </div>
                             <div className="img-customize">
                                 <img
                                     src={img}
-                                    className="img section-specialty"
+                                    className="img section-medical-facility"
                                 />
-                                <div>Cơ xương khớp</div>
+                                <div>Bệnh viện chợ rẫy</div>
                             </div>
                             <div className="img-customize">
                                 <img
                                     src={img}
-                                    className="img section-specialty"
+                                    className="img section-medical-facility"
                                 />
-                                <div>Cơ xương khớp</div>
+                                <div>Bệnh viện chợ rẫy</div>
                             </div>
                             <div className="img-customize">
                                 <img
                                     src={img}
-                                    className="img section-specialty"
+                                    className="img section-medical-facility"
                                 />
-                                <div>Cơ xương khớp</div>
+                                <div>Bệnh viện chợ rẫy</div>
                             </div>
                             <div className="img-customize">
                                 <img
                                     src={img}
-                                    className="img section-specialty"
+                                    className="img section-medical-facility"
                                 />
-                                <div>Cơ xương khớp</div>
+                                <div>Bệnh viện chợ rẫy</div>
                             </div>
                             <div className="img-customize">
                                 <img
                                     src={img}
-                                    className="img section-specialty"
+                                    className="img section-medical-facility"
                                 />
-                                <div>Cơ xương khớp</div>
+                                <div>Bệnh viện chợ rẫy</div>
                             </div>
                         </Slider>
                     </div>
@@ -80,4 +80,4 @@ const mapDispatchToProps = (dispatch) => {
     return {};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Specialty);
+export default connect(mapStateToProps, mapDispatchToProps)(MedicalFacility);
